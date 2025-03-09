@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cellphone-frame {
+  position: absolute;
+  height: 90vh;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  height: 90vh;
+  left: 50%;
+  top: 50%;
+}
+.viewport-container {
+  background-color: rgb(27 28 34);
+  border-radius: 80px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  width: 24vw;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.viewport-head {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px red solid;
+  height: 24vh;
+  width: 20vw;
+  border-bottom: 1px solid rgb(45, 47, 53);
+}
+/*this is the start of first line of heading*/
+.head-system {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 13vh;
+  width: 17vw;
+}
+.time {
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.6vmin;
+  font-weight: 600;
+}
+.signal-battery-image {
+  width: 4vw;
+}
+/*this is the start of second line of heading*/
+.head-chat {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 18vw;
+  top: 18vh;
+}
+.head-left-container {
+  display: flex;
+  align-items: center;
+  gap: 0.4vw;
+}
+.profile-pic-container {
+  width: 2vw;
+}
+
+.return-arrow {
+  width: 2.56vw;
+  height: 4vh;
+}
+.head-profile-pic {
+  border-radius: 50%;
+  width: 2vw;
+  height: 3.6vh;
+}
+.phone-video-call {
+  width: 5vw;
+  height: 4vh;
+}
+.head-username-container {
+  display: flex;
+}
+.head-username {
+  color: rgb(227, 229, 323);
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+}
+.username-arrow {
+  color: rgb(227, 229, 323);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1vmin;
+  font-weight: 200;
+}
+
+.head-right-container {
+  display: flex;
+  align-items: center;
+}
