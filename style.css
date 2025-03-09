@@ -17,6 +17,19 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: "gg sans";
+  src: url("./font/gg-sans-Medium.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gg sans";
+  src: url("./font/gg-sans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
 .cellphone-frame {
   position: absolute;
   height: 90vh;
@@ -123,11 +136,11 @@
   flex-direction: column;
   align-items: center;
   border: red solid 2px;
-  height: 24vh;
+
   width: 20vw;
   top: 24vh;
 }
-.body-head-container {
+.entire-chatlog-container {
   border: green solid 2px;
   position: absolute;
   display: flex;
@@ -181,4 +194,77 @@
   width: 6vw;
   height: 3vh;
   z-index: 11;
+}
+
+/*above are the heading of chatlog, no need to change*/
+.date-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1vh;
+  width: 18vw;
+  height: 4vh;
+  border: white 2px solid;
+}
+
+.date-dashline {
+  position: absolute;
+  width: 17vw;
+  border: 0.5px solid rgb(45, 47, 53);
+}
+.date {
+  position: absolute;
+  background-color: rgb(27 28 34);
+  font-family: "gg sans", sans-serif;
+  font-size: 1vmin;
+  font-weight: 520;
+  padding: 0.1vmin;
+  color: rgb(150, 152, 162);
+  min-width: 5vw;
+  text-align: center;
+}
+/*above is the implementation of date module*/
+.chat-container {
+  display: flex;
+  align-items: flex-start;
+  width: 18vw;
+  border: goldenrod solid 2px;
+  min-height: 4vh;
+}
+.chat-content-container {
+  flex-grow: 1;
+  border: gold solid 2px;
+  min-height: 4vh;
+}
+.chat-info-container {
+  display: flex;
+  gap: 0.6vw;
+  align-items: center;
+  justify-content: flex-start;
+}
+.chat-username {
+  color: rgb(227, 229, 323);
+  font-size: 1.3vmin;
+  font-weight: 600;
+  font-family: "gg sans", sans-serif;
+}
+.chat-date-time {
+  color: rgb(150, 152, 162);
+  font-weight: 520;
+  font-size: 1vmin;
+  font-family: "gg sans", sans-serif;
+}
+
+.cute-cat {
+  margin-right: 0.6vw;
+  width: 2vw;
+  height: 3.6vh;
+  border-radius: 50%;
+}
+.chat-body {
+  font-size: 1.3vmin;
+  font-family: "gg sans", sans-serif;
+  color: rgb(227, 229, 323);
+  font-weight: 100;
 }
