@@ -18,30 +18,6 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
-//scrolling effect
-document.addEventListener("DOMContentLoaded", function () {
-  const chatlogContainer = document.getElementById("entire-chatlog-container");
-
-  if (!chatlogContainer) return;
-
-  // Set max height and enable scrolling
-  chatlogContainer.style.maxHeight = "60vh";
-  chatlogContainer.style.overflowY = "auto";
-  chatlogContainer.style.overflowX = "hidden"; // Prevent horizontal scroll
-
-  chatlogContainer.addEventListener(
-    "wheel",
-    function (event) {
-      // Prevent page from scrolling when hovering over chatlog
-      if (chatlogContainer.scrollHeight > chatlogContainer.clientHeight) {
-        event.preventDefault();
-        chatlogContainer.scrollTop += event.deltaY;
-      }
-    },
-    { passive: false }
-  );
-});
-
 //adding button functionality
 document.addEventListener("DOMContentLoaded", function () {
   function setupButton(button, defaultText, toggledText) {
@@ -74,3 +50,35 @@ document.addEventListener("DOMContentLoaded", function () {
     "Spam Reported"
   );
 });
+
+//scroll effect
+const scrollContainer = document.getElementById("scroll-container");
+const scrollContent = document.getElementById("entire-chatlog-container");
+
+let currentTop = 0;
+let isMouseInside = false;
+
+// Detect if the mouse is inside the scrollable div
+scrollContainer.addEventListener("mouseenter", () => (isMouseInside = true));
+scrollContainer.addEventListener("mouseleave", () => (isMouseInside = false));
+
+document.addEventListener(
+  "wheel",
+  function (event) {
+    if (isMouseInside) {
+      event.preventDefault(); // Prevent viewport scrolling
+      let maxScroll = scrollContainer.clientHeight - scrollContent.clientHeight;
+      currentTop -= event.deltaY; // Adjust position based on scroll
+
+      if (currentTop > 0) {
+        currentTop = 0; // Prevent scrolling beyond top
+      } else if (currentTop < maxScroll) {
+        currentTop = maxScroll; // Prevent scrolling beyond bottom
+      }
+
+      scrollContent.style.top = currentTop + "px";
+    }
+    // If mouse is outside, allow default page scrolling
+  },
+  { passive: false }
+);
