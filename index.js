@@ -82,3 +82,37 @@ document.addEventListener(
   },
   { passive: false }
 );
+
+//below are the implementation of input triggering keyboard showing and hiding
+const keyboard = document.getElementById("keyboard");
+const chatlog = document.getElementById("entire-chatlog-container");
+const bottomMenu = document.getElementById("bottom-menu");
+const toggleKeyboard = document.getElementById("toggleKeyboard");
+let isKeyboardVisible = false;
+
+toggleKeyboard.addEventListener("focus", () => {
+  isKeyboardVisible = true;
+  keyboard.style.top = "37.6vh";
+  bottomMenu.style.top = "30vh";
+  chatlog.style.transform = "translateY(-20vh)";
+});
+
+chatlog.addEventListener("click", () => {
+  if (isKeyboardVisible) {
+    isKeyboardVisible = false;
+    keyboard.style.top = "57.6vh";
+    bottomMenu.style.top = "50vh";
+    chatlog.style.transform = "translateY(0)";
+    toggleKeyboard.blur();
+  }
+});
+
+chatlog.addEventListener(
+  "wheel",
+  (event) => {
+    event.preventDefault();
+    chatlog.scrollTop += event.deltaY;
+  },
+  { passive: false }
+);
+//finish, things work out great

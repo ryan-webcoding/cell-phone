@@ -158,8 +158,9 @@
   position: absolute;
   display: flex;
   width: 18vw;
-  min-height: 60vh;
+  min-height: 140vh;
 
+  transition: top 0.3s ease-in-out;
   flex-direction: column;
 }
 .body-profile-img {
@@ -297,4 +298,50 @@
   font-family: "gg sans", sans-serif;
   color: rgb(227, 229, 323);
   font-weight: 100;
+}
+
+/*starting to implement the bottom menu*/
+.bottom-menu {
+  gap: 0.8vmin;
+  display: flex;
+  align-items: center;
+  background-color: rgb(27, 28, 34);
+  top: 50vh;
+  height: 7.6vh;
+  width: 18vw;
+  border: 5px blue solid;
+  border-top: 1px solid rgb(45, 47, 53);
+  border-bottom: none;
+
+  transition: top 0.3s ease-in-out;
+  position: absolute;
+}
+.bottom-left-icons {
+  width: 6.5vw;
+  height: 3.7vh;
+}
+.bottom-input {
+  padding: 0.6vmin;
+  border: none;
+  border-radius: 10vmin;
+  height: 3vh;
+  font-size: 1.3vmin;
+  font-family: "gg sans", sans-serif;
+  color: rgb(227, 229, 323);
+  background-color: rgb(37, 39, 45);
+}
+.microphone-icon {
+  height: 3.6vh;
+  width: 2vw;
+}
+
+/*finish implementing bottom menu*/
+/*begin to implement keyboard*/
+.keyboard {
+  position: absolute;
+  top: 57.6vh;
+  height: 20vh;
+  width: 18vw;
+  background-color: rgb(50, 49, 53);
+  transition: top 0.3s ease-in-out;
 }
