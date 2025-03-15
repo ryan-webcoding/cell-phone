@@ -30,6 +30,10 @@
   font-weight: 600;
   font-style: normal;
 }
+.night-club-image {
+  width: 100vw;
+  height: 100vh;
+}
 .cellphone-frame {
   pointer-events: none;
   position: absolute;
@@ -141,24 +145,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: red solid 2px;
 
   width: 20vw;
   top: 24vh;
 }
 
 .scroll-container {
-  border: 3px brown solid;
   width: 18vw;
   height: 60vh;
   overflow: hidden;
 }
 .entire-chatlog-container {
-  border: green solid 2px;
   position: absolute;
   display: flex;
   width: 18vw;
-  min-height: 140vh;
+  min-height: 70vh;
 
   transition: top 0.3s ease-in-out;
   flex-direction: column;
@@ -236,7 +237,6 @@
   margin-top: 1vh;
   width: 18vw;
   height: 4vh;
-  border: white 2px solid;
 }
 
 .date-dashline {
@@ -260,12 +260,12 @@
   display: flex;
   align-items: flex-start;
   width: 18vw;
-  border: goldenrod solid 2px;
+
   min-height: 4vh;
 }
 .chat-content-container {
   flex-grow: 1;
-  border: gold solid 2px;
+
   min-height: 4vh;
 }
 .chat-info-container {
@@ -309,7 +309,7 @@
   top: 50vh;
   height: 7.6vh;
   width: 18vw;
-  border: 5px blue solid;
+
   border-top: 1px solid rgb(45, 47, 53);
   border-bottom: none;
 
@@ -336,7 +336,7 @@
 }
 
 /*finish implementing bottom menu*/
-/*begin to implement keyboard*/
+/*begin to implement keyboard and dialogue-button inside*/
 .keyboard {
   position: absolute;
   top: 57.6vh;
@@ -345,3 +345,133 @@
   background-color: rgb(50, 49, 53);
   transition: top 0.3s ease-in-out;
 }
+.dialogue-button {
+  border: none;
+  font-size: 1vmin;
+  font-family: "gg sans", sans-serif;
+  border-radius: 1vmin;
+  background-color: rgb(27, 0, 0);
+  color: rgb(227, 229, 323);
+  position: absolute;
+  width: 6vw;
+  height: 3vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*this is for typing banner, which include elipses animation and typing-banner-text*/
+.typing-banner {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 7.6vh;
+  width: 18vw;
+  height: 2.6vh;
+  background-color: rgb(27 28 34);
+  visibility: hidden;
+}
+.typing-banner-text {
+  color: rgb(227, 229, 323);
+  font-family: "gg sans", sans-serif;
+  font-weight: 100;
+  font-size: 1.1vmin;
+  margin-left: 0.9vmin;
+}
+.typing-banner-becky {
+  color: rgb(227, 229, 323);
+  font-family: "gg sans", sans-serif;
+  font-weight: bold;
+}
+.elipses-container {
+  display: flex;
+  margin-left: 0.9vmin;
+  gap: 0.9vmin;
+}
+#dot1 {
+  border-radius: 50%;
+  width: 0.3vw;
+  height: 0.62vh;
+  background-color: black;
+  animation: dot1Animation 1.5s linear infinite;
+}
+#dot2 {
+  border-radius: 50%;
+  width: 0.3vw;
+  height: 0.62vh;
+  background-color: black;
+  animation: dot2Animation 1.5s linear infinite;
+}
+#dot3 {
+  border-radius: 50%;
+  width: 0.3vw;
+  height: 0.62vh;
+  background-color: black;
+  animation: dot3Animation 1.5s linear infinite;
+}
+
+@keyframes dot1Animation {
+  0% {
+    transform: scale(1);
+    background-color: black;
+  }
+  30% {
+    transform: scale(1.2);
+    background-color: rgb(198, 199, 204);
+  }
+  60% {
+    transform: scale(1);
+    background-color: black;
+  }
+  100% {
+    transform: scale(1);
+    background-color: black;
+  }
+}
+
+@keyframes dot2Animation {
+  0% {
+    transform: scale(1);
+    background-color: black;
+  }
+  15% {
+    transform: scale(1);
+    background-color: black;
+  }
+  45% {
+    transform: scale(1.2);
+    background-color: rgb(198, 199, 204);
+  }
+  75% {
+    transform: scale(1);
+    background-color: black;
+  }
+  100% {
+    transform: scale(1);
+    background-color: black;
+  }
+}
+
+@keyframes dot3Animation {
+  0% {
+    transform: scale(1);
+    background-color: black;
+  }
+  30% {
+    transform: scale(1);
+    background-color: black;
+  }
+  60% {
+    transform: scale(1.2);
+    background-color: rgb(198, 199, 204);
+  }
+  90% {
+    transform: scale(1);
+    background-color: black;
+  }
+  100% {
+    transform: scale(1);
+    background-color: black;
+  }
+}
+/*finish implementing typing banner, which is all above*/
